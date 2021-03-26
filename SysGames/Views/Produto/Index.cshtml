@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SysGames.Models.Produto>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Produtos</h2>
+
+<div style="display: flex">
+	<p style="margin-right: 2%">@Html.ActionLink("Novo Console", "Create", "Videogame")</p>
+	<p style="margin-right: 2%">@Html.ActionLink("Novo Jogo", "Create", "Jogo")</p>
+	<p>@Html.ActionLink("Novo Acessório", "Create", "Acessorio")</p>
+</div>
+<table class="table">
+	<tr>
+		<th>
+			Produto
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Nome)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Descricao)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Valor)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.QtdEstoque)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Tipo)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.ProdutoID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Descricao)
+			</td>
+			<td>
+				R$@Html.DisplayFor(modelItem => item.Valor)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.QtdEstoque)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Tipo)
+			</td>
+			<td>
+				@Html.ActionLink("Editar", "Edit", new { id = item.ProdutoID }) |
+				@Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoID }) |
+				@Html.ActionLink("Deletar", "Delete", new { id = item.ProdutoID })
+			</td>
+		</tr>
+	}
+
+</table>

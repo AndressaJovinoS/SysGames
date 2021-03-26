@@ -1,0 +1,51 @@
+﻿@model SysGames.Models.Venda
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja excluir esta venda?</h3>
+<div>
+	<h4>Venda</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.VendaID)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.VendaID)
+		</dd>
+		<dt>
+			@Html.DisplayFor(model => model.Pagamento.Carrinho.Produto.Nome)
+		</dt>
+		<dd>
+			R$ @Html.DisplayFor(model => model.Pagamento.Carrinho.Produto.Valor)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.DataHora)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.DataHora)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Previsao)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Previsao)
+		</dd>
+
+	</dl>
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Deletar" class="btn btn-default" /> |
+			@Html.ActionLink("Voltar para lista de vendas", "Index")
+		</div>
+	}
+</div>

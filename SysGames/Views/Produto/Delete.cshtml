@@ -1,0 +1,57 @@
+﻿@model SysGames.Models.Produto
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja excluir este produto?</h3>
+<div>
+	<h4>Produto</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Nome)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Nome)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Descricao)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Descricao)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Valor)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Valor)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.QtdEstoque)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.QtdEstoque)
+		</dd>
+
+	</dl>
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Deletar" class="btn btn-default" /> |
+			@Html.ActionLink("Voltar para lista de produtos", "Index")
+		</div>
+	}
+</div>

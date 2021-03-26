@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SysGames.Models.Venda>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Vendas</h2>
+
+<p>
+	@Html.ActionLink("Criar Venda", "Create")
+</p>
+<table class="table">
+	<tr>
+		<th>
+			Venda
+		</th>
+		<th>
+			Nome do cliente
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DataHora)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.VendaID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Pagamento.Carrinho.Cliente.Nome)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.DataHora)
+			</td>
+			<td>
+				@Html.ActionLink("Editar", "Edit", new { id = item.VendaID }) |
+				@Html.ActionLink("Detalhes", "Details", new { id = item.VendaID }) |
+				@Html.ActionLink("Deletar", "Delete", new { id = item.VendaID })
+			</td>
+		</tr>
+	}
+
+</table>

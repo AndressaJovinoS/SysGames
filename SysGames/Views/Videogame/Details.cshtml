@@ -1,0 +1,66 @@
+﻿@model SysGames.Models.Videogame
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+	<h4>Videogame</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Nome)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Nome)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Descricao)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Descricao)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Valor)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Valor)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.QtdEstoque)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.QtdEstoque)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Marca)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Marca)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Modelo)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Modelo)
+		</dd>
+
+	</dl>
+</div>
+<p>
+	@Html.ActionLink("Editar", "Edit", Model) |
+	@Html.ActionLink("Voltar para lista de produtos", "Index", "Produto")
+</p>

@@ -1,0 +1,128 @@
+﻿@model SysGames.Models.Cliente
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja excluir este cliente?</h3>
+<div>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.CPF)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.CPF)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Nome)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Nome)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.DataNascimento)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.DataNascimento)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Telefone)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Telefone)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Email)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Email)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Senha)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Senha)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Logradouro)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Logradouro)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Bairro)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Bairro)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Localidade)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Localidade)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.UF)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.UF)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.CEP)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.CEP)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Complemento)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Complemento)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Numero)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Numero)
+		</dd>
+
+	</dl>
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Deletar" class="btn btn-default" /> |
+			@Html.ActionLink("Voltar para lista de clientes", "Index")
+		</div>
+	}
+</div>
